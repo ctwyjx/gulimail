@@ -3,6 +3,7 @@ package com.atguigu.gulimall.pms;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
@@ -14,7 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * 2、使用@MapperScan扫描所有mapper接口
  *
  */
-@EnableSwagger2
+@RefreshScope
 @MapperScan(basePackages = "com.atguigu.gulimall.pms.dao")
 @SpringBootApplication
 public class GulimallPmsApplication {

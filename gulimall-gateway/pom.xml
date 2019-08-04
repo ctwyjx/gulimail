@@ -9,63 +9,37 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.atguigu</groupId>
-    <artifactId>gulimall-pms</artifactId>
+    <artifactId>guigumall-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>gulimall-pms</name>
-    <description>商品管理系统</description>
+    <name>guigumall-gateway</name>
+    <description>网关</description>
 
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
-        <!--  <mysql.version>8.0.16</mysql.version>-->
-        <mysql.version>5.1.47</mysql.version>
+        <nacos.version>0.2.2.RELEASE</nacos.version>
     </properties>
 
     <dependencies>
-
         <dependency>
-            <groupId>com.atguigu</groupId>
-            <artifactId>gulimall-core</artifactId>
-            <version>1.0-SNAPSHOT</version>
-
-        </dependency>
-
-        <!--只要引入了jdbc-starter模块默认数据库驱动的版本，是由springboot版本仲裁中心控制的-->
-        <!--  换数据库驱动  -->
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>${nacos.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>${nacos.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
